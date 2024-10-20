@@ -51,22 +51,6 @@ df.head()
 
 data = df.copy()
 
-def remove_stopwords(text):
-  stop_words = stopwords.words('english')
-
-  imp_words = []
-
-  # Storing the important words
-  for word in str(text).split():
-    word = word.lower()
-    
-    if word not in stop_words:
-      imp_words.append(word)
-
-  output = " ".join(imp_words)
-
-  return output
-
 df['details'] = df['details'].apply(lambda text: remove_stopwords(text))
 df.head()
 
